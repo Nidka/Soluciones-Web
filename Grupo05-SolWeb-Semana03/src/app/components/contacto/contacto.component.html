@@ -1,0 +1,73 @@
+<section class="contacto">
+  <!-- Encabezado -->
+  <div class="encabezado">
+    <h2>Contáctanos</h2>
+    <p class="introduccion">
+      ¿Tienes preguntas o quieres hacer un pedido? Completa el formulario o revisa nuestra sucursal.
+    </p>
+  </div>
+
+  <!-- Contenido principal: Formulario + Tarjeta de sucursal -->
+  <div class="contenido">
+    <!-- Formulario de contacto -->
+    <form class="formulario card-animada">
+      <h3>Envíanos un mensaje</h3>
+      <div class="grupo-formulario">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+      </div>
+
+      <div class="grupo-formulario">
+        <label for="email">Correo</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+      </div>
+
+      <div class="grupo-formulario">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      </div>
+
+      <button type="submit" class="boton-enviar">Enviar mensaje</button>
+    </form>
+
+    <!-- Tarjeta de sucursal -->
+    <div class="informacion card-animada">
+      <h3>Nuestras sucursales de Pizza Hut en Trujillo</h3>
+      <div class="datos-mapa">
+        <!-- Lista de sucursales -->
+        <div class="datos-sucursal">
+          <ul>
+            <li>
+              <strong>Pizza Hut - Óvalo Larco</strong><br>
+              Av. Larco 1142, Trujillo 13008<br>
+              Teléfono: (01) 5051111<br>
+              Horario: 11:00 - 23:00
+            </li>
+            <li>
+              <strong>Pizza Hut - Real Plaza Trujillo</strong><br>
+              Av. César Vallejo Oeste 1345, Trujillo 13008<br>
+              Teléfono: (01) 5051111<br>
+              Horario: 11:00 - 23:00
+            </li>
+            <li>
+              <strong>Pizza Hut 036 - Mall Plaza</strong><br>
+              Av. América Oeste 750, Trujillo 13011<br>
+              Teléfono: (01) 5051111<br>
+              Horario: 11:00 - 23:00
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mapa único -->
+        <div class="mapa-responsive">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.0!2d-79.056!3d-8.114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d1ade11248d%3A0x6e337c5f399a7352!2sPizza+Hut+Trujillo!5e0!3m2!1ses!2spe!4v1756583641777!5m2!1ses!2spe"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

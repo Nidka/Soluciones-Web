@@ -1,0 +1,72 @@
+/* ===== Footer ===== */
+.site-footer {
+  background-color: #111; /* negro elegante */
+  color: #fff;
+  padding: 50px 20px 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Bloques de enlaces */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-links .block h4 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #ed3b43; /* rojo principal */
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.footer-links .block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links .block ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links .block ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links .block ul li a:hover {
+  color: #fff;
+}
+
+/* Nota final */
+.footer-note {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #aaa;
+}
+
+.footer-note p {
+  margin: 6px 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer-links {
+    gap: 20px;
+    text-align: center;
+  }
+  .footer-links .block h4 {
+    font-size: 0.95rem;
+  }
+  .footer-links .block ul li a {
+    font-size: 0.85rem;
+  }
+}

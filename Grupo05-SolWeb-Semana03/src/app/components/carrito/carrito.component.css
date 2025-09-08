@@ -1,0 +1,128 @@
+.carrito {
+  flex: 1;
+  max-width: 700px;
+  margin: 7rem auto;
+  padding: 2rem;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.6s ease forwards; /* animación entrada */
+}
+
+.carrito h2 {
+  margin-bottom: 1.5rem;
+  color: #ed3b43;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  animation: slideDown 0.6s ease forwards;
+}
+
+.carrito ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.carrito li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1rem;
+  color: #444;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeSlide 0.4s ease forwards;
+}
+
+.carrito li strong {
+  color: #222;
+  font-weight: 600;
+}
+
+.carrito li:nth-child(n) {
+  animation-delay: calc(0.1s * var(--i, 1));
+}
+.total {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  text-align: right;
+  font-weight: bold;
+  color: #333;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Botón */
+.carrito button {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #ed3b43;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  animation: fadeIn 1s ease forwards;
+}
+
+.carrito button:hover {
+  background: #c72d35;
+  transform: translateY(-2px);
+}
+
+.carrito p {
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .carrito {
+    max-width: 95%;
+    margin: 1.5rem auto 2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .carrito h2 {
+    font-size: 1.6rem;
+  }
+
+  .carrito li {
+    font-size: 0.95rem;
+  }
+
+  .total {
+    font-size: 1.1rem;
+  }
+
+  .carrito button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+}

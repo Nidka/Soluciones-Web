@@ -1,0 +1,150 @@
+/* Contenedor principal */
+.contacto {
+  width: 90%;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 15px;
+}
+
+/* Sección de especialidades */
+.especialidades-section {
+  padding: 40px 20px;
+  background-color: #fff5f0; /* igual que sobre nosotros */
+}
+
+/* Encabezado */
+.encabezado {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.encabezado h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #ed3b43; /* rojo principal */
+  margin-bottom: 12px;
+}
+
+.introduccion {
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid de especialidades */
+.especialidades-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  animation: fadeIn 1s ease forwards;
+
+  align-items: stretch; /* 🔑 todas las tarjetas igual de altas */
+}
+
+/* Tarjetas */
+.especialidad-card {
+  background-color: #fafafa; /* igual que tarjetas contacto */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  height: 100%; /* 🔑 ocupa todo el alto de la celda del grid */
+}
+
+.especialidad-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+/* Imagen de la especialidad */
+.especialidad-imagen img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Nombre */
+.especialidad-nombre h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ed3b43; /* rojo principal */
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Descripción */
+.especialidad-descripcion {
+  flex-grow: 1; /* 🔑 asegura que todas las descripciones ocupen espacio proporcional */
+  display: flex;
+  align-items: center; /* centra verticalmente si hay poco texto */
+}
+
+.especialidad-descripcion p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 0 12px;
+  text-align: center;
+  line-height: 1.5;
+  width: 100%;
+}
+
+/* Acción (precio + botón) */
+.especialidad-accion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* 🔑 botón siempre pegado abajo */
+}
+
+.especialidad-accion span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+.especialidad-accion button {
+  background-color: #ed3b43; /* rojo principal */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.especialidad-accion button:hover {
+  background: #c72d35; /* rojo oscuro */
+  transform: translateY(-2px);
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .encabezado h2 {
+    font-size: 1.8rem;
+  }
+  .introduccion {
+    font-size: 0.95rem;
+  }
+  .especialidad-card {
+    padding: 15px;
+  }
+}

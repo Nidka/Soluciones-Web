@@ -1,0 +1,26 @@
+<!-- <div class="especialidades-container">
+  <div class="especialidad-card" *ngFor="let pizza of especialidades">
+    <img [src]="pizza.imagen" alt="{{ pizza.nombre }}">
+    <h3>{{ pizza.nombre }}</h3>
+    <p>{{ pizza.descripcion }}</p>
+    <span>S/. {{ pizza.precio }}</span>
+    <button>Agregar al carrito</button>
+  </div>
+</div> -->
+<section class="contacto">
+    <div class="especialidades-sections">
+        <div class="encabezado">
+            <h2>Nuestras especialidades</h2>
+            <p class="introduccion">
+                Promociones, combos, variedad y más
+            </p>
+        </div>
+        <section class="especialidades-container">
+            <app-pizza-tarjeta *ngFor="let pizza of especialidades" [pizza]="pizza"
+                (add)="onAgregar($event)"> <!-- Output: recibe evento del hijo -->
+            </app-pizza-tarjeta>
+        </section>
+
+
+    </div>
+</section>

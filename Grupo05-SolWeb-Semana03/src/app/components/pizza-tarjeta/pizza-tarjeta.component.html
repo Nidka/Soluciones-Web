@@ -1,0 +1,7 @@
+<div class="especialidad-card">
+  <img [src]="pizza.imagen" alt="{{ pizza.nombre }}">
+  <h3>{{ pizza.nombre }}</h3>
+  <p>{{ pizza.descripcion }}</p>
+  <span>S/. {{ pizza.precio }}</span>
+  <button (click)="agregarAlCarrito()">Agregar al carrito</button>
+</div>
