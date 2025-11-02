@@ -19,9 +19,20 @@
     </nav>
 
     <div class="auth-section">
-      <button class="auth-btn login-btn" routerLink="/auth/login">
-        Reservar Cita
-      </button>
+      <ng-container *ngIf="currentUser$ | async as user; else notAuthenticated">
+        <span class="user-name">¡Hola, {{ user.nombre }}!</span>
+        <button class="auth-btn logout-btn" (click)="logout()">
+          Cerrar Sesión
+        </button>
+      </ng-container>
+      <ng-template #notAuthenticated>
+        <button class="auth-btn login-btn" routerLink="/auth/login">
+          Iniciar Sesión
+        </button>
+        <button class="auth-btn register-btn" routerLink="/auth/register">
+          Registrarse
+        </button>
+      </ng-template>
     </div>
   </div>
 </header>

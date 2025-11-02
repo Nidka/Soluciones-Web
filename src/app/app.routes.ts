@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './shared/guards/auth.guard';
 
 export const routes: Routes = [
   // Ruta por defecto - redirige a login
@@ -8,7 +9,7 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   
-  // Rutas de autenticación
+  // Rutas de autenticación (públicas)
   {
     path: 'auth/login',
     loadComponent: () => import('./features/auth/login/login.component').then(m => m.LoginComponent)
@@ -22,15 +23,17 @@ export const routes: Routes = [
     loadComponent: () => import('./features/auth/forgot-password/forgot-password.component').then(m => m.ForgotPasswordComponent)
   },
   
-  // Ruta del dashboard
+  // Ruta del dashboard (protegida)
   {
     path: 'dashboard',
-    loadComponent: () => import('./features/dashboard/home/home.component').then(m => m.HomeComponent)
+    loadComponent: () => import('./features/dashboard/home/home.component').then(m => m.HomeComponent),
+    canActivate: [authGuard]
   },
   
-  // Rutas de citas
+  // Rutas de citas (protegidas)
   {
     path: 'appointments',
+    canActivate: [authGuard],
     children: [
       {
         path: 'list',
@@ -47,9 +50,10 @@ export const routes: Routes = [
     ]
   },
   
-  // Rutas de barberos
+  // Rutas de barberos (protegidas)
   {
     path: 'barbers',
+    canActivate: [authGuard],
     children: [
       {
         path: 'list',
@@ -66,9 +70,10 @@ export const routes: Routes = [
     ]
   },
   
-  // Rutas de usuarios
+  // Rutas de usuarios (protegidas)
   {
     path: 'users',
+    canActivate: [authGuard],
     children: [
       {
         path: 'profile',
